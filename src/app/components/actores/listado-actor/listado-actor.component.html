@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">nombre</th>
+        <th scope="col">apellido</th>
+        <th scope="col">edad</th>
+        <th scope="col">nacionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let actor of actores">
+        <th scope="row">{{ actor.id }}</th>
+        <td>{{ actor.nombre }}</td>
+        <td>{{ actor.apellido}}</td>
+        <td>{{ actor.edad }}</td>
+        <td>{{ actor.nacionalidad}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,15 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Bandera</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pais of paises" (click)="seleccionarPais(pais)">
+        <td><img [src]="pais.banderaUrl" alt="Bandera de {{ pais.nombre }}" width="50"></td>
+        <td>{{ pais.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

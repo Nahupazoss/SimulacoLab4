@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Alta de Película</h2>
+    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="number" class="form-control" id="id" name="id" [(ngModel)]="pelicula.id" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="pelicula.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="pelicula.tipo" required>
+      </div>
+      <div class="form-group">
+        <label for="cantidadPublico">Cantidad de Público:</label>
+        <input type="number" class="form-control" id="cantidadPublico" name="cantidadPublico" [(ngModel)]="pelicula.cantidadPublico" required>
+      </div>
+      <div class="form-group">
+        <label for="fechaEstreno">Fecha de Estreno:</label>
+        <input type="date" class="form-control" id="fechaEstreno" name="fechaEstreno" [(ngModel)]="pelicula.fechaEstreno" required>
+      </div>
+      <div class="form-group">
+        <label for="fotoPelicula">Foto de la Película:</label>
+        <input type="file" class="form-control-file" id="fotoPelicula" name="fotoPelicula" (change)="onFileSelected($event)" accept="image/*" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Película</button>
+    </form>
+  </div>
+  <app-tabla-actor (actorSeleccionado)="seleccionarActor($event)"></app-tabla-actor>

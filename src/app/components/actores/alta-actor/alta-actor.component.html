@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Alta de Actor</h2>
+    <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        </div>
+        <input type="text" class="form-control" formControlName="nombre">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+        </div>
+        <input type="text" class="form-control" formControlName="apellido">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Edad</span>
+        </div>
+        <input type="number" class="form-control" formControlName="edad">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">País Natal</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="paisNatal">
+          <option value="" disabled selected>Choose...</option>
+          <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="actorForm.invalid">Guardar Actor</button>
+    </form>
+  
+    <app-tabla-paises (paisSeleccionado)="seleccionarPais($event)"></app-tabla-paises>
+  </div>
